@@ -80,7 +80,7 @@ Iliad.ILObject subclass: Payer [
 	self status: (aDictionary at: 'STATUS' ifAbsent: [nil]).
 	self firstName: (aDictionary at: 'FIRSTNAME' ifAbsent: [nil]).
 	self lastName: (aDictionary at: 'LASTNAME' ifAbsent: [nil]).
-	self business: (aDictionary at: 'business' ifAbsent: [nil]).
+	self business: (aDictionary at: 'BUSINESS' ifAbsent: [nil]).
 	self address parseFields: aDictionary
     ]
 ]

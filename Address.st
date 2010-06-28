@@ -21,16 +21,6 @@ Iliad.ILObject subclass: Address [
 	name := aString
     ]
 
-    city [
-	<category: 'accessing'>
-	^city
-    ]
-
-    city: aString [
-	<category: 'accessing'>
-	city := aString
-    ]
-
     state [
 	<category: 'accessing'>
 	^state
