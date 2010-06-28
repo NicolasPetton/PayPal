@@ -130,16 +130,6 @@ Iliad.ILWidget subclass: Transaction [
 	    registerActionFor: [self answer: nil])
     ]
 
-    isLive [
-	<category: 'accessing'>
-	^self isSandbox not
-    ]
-
-    isSandbox [
-	<category: 'accessing'>
-	^sandbox ifNil: [false]
-    ]
-
     commandForRequest: aRequest [
 	<category: 'requests'>
 	^'curl "', aRequest requestUrl asString, '"'
@@ -159,4 +149,15 @@ Iliad.ILWidget subclass: Transaction [
 	<category: 'building'>
 	self application redirectTo: self paypalRedirectUrl
     ]
+
+    isLive [
+	<category: 'testing'>
+	^self isSandbox not
+    ]
+
+    isSandbox [
+	<category: 'testing'>
+	^sandbox ifNil: [false]
+    ]
+
 ]
