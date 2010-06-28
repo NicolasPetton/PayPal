@@ -138,7 +138,6 @@ Iliad.ILWidget subclass: Transaction [
     responseForCommand: aString [
 	<category: 'requests'>
 	| response pipe |
-	aString printNl.
 	pipe := FileStream popen: aString dir: FileStream read.
 	response := NVPResponse fromString: pipe contents.
 	pipe close.
