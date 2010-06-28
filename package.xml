@@ -1,6 +1,7 @@
 <package>
   <name>PayPal</name>
   <namespace>PayPal</namespace>
+  <url>git://github.com/NicolasPetton/PayPal.git</url>
   <prereq>Iliad</prereq>
   <prereq>NetClients</prereq>
   <filein>Account.st</filein>
