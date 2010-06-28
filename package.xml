@@ -1,0 +1,26 @@
+<package>
+  <name>PayPal</name>
+  <namespace>PayPal</namespace>
+  <prereq>Iliad</prereq>
+  <prereq>NetClients</prereq>
+  <filein>Account.st</filein>
+  <filein>Address.st</filein>
+  <filein>Payer.st</filein>
+  <filein>NVPRequest.st</filein>
+  <filein>NVPResponse.st</filein>
+  <filein>SetExpressCheckoutRequest.st</filein>
+  <filein>GetExpressCheckoutDetailsRequest.st</filein>
+  <filein>DoExpressCheckoutPaymentRequest.st</filein>
+  <filein>Transaction.st</filein>
+  <filein>ExpressCheckoutTransaction.st</filein>
+  <file>Account.st</file>
+  <file>Address.st</file>
+  <file>Payer.st</file>
+  <file>NVPRequest.st</file>
+  <file>NVPResponse.st</file>
+  <file>SetExpressCheckoutRequest.st</file>
+  <file>GetExpressCheckoutDetailsRequest.st</file>
+  <file>DoExpressCheckoutPaymentRequest.st</file>
+  <file>Transaction.st</file>
+  <file>ExpressCheckoutTransaction.st</file>
+</package>

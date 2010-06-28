@@ -1,0 +1,3 @@
+A simple PayPal integration for Iliad using the NVP API.
+It only supports ExpressCheckouts for now 
+(however adding other transactions should be fairly easy)
