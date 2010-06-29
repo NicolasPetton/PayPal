@@ -52,7 +52,7 @@ Transaction subclass: ExpressCheckoutTransaction [
 
     paypalRedirectUrl [
 	<category: 'accessing'>
-	^'https://www.', self hostName, '/cgi-bin/webscr?cmd=_express-checkout&token=', self token
+	^'https://www.', self hostName, '/cgi-bin/webscr?cmd=_express-checkout&token=', (self token ifNil: [''])
     ]
 
     processTransaction [
