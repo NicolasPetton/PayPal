@@ -1,7 +1,6 @@
 <package>
   <name>PayPal</name>
   <namespace>PayPal</namespace>
-  <url>git://github.com/NicolasPetton/PayPal.git</url>
   <prereq>Iliad</prereq>
   <prereq>NetClients</prereq>
   <filein>Account.st</filein>
@@ -14,6 +13,7 @@
   <filein>DoExpressCheckoutPaymentRequest.st</filein>
   <filein>Transaction.st</filein>
   <filein>ExpressCheckoutTransaction.st</filein>
+  <filein>PayPalApplication.st</filein>
   <file>Account.st</file>
   <file>Address.st</file>
   <file>Payer.st</file>
@@ -24,4 +24,5 @@
   <file>DoExpressCheckoutPaymentRequest.st</file>
   <file>Transaction.st</file>
   <file>ExpressCheckoutTransaction.st</file>
+  <file>PayPalApplication.st</file>
 </package>
