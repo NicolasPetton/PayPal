@@ -35,6 +35,10 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'version' value: self transaction version;
 	    addParameter: 'paymentaction' value: self transaction paymentAction;
 	    addParameter: 'amt' value: self transaction amount;
+	    addParameter: 'subtotal' value: self transaction subtotal;
+	    addParameter: 'shipping' value: self transaction shipping;
+	    addParameter: 'tax' value: self transaction tax;
+	    addParameter: 'desc' value: self transaction description;
 	    addParameter: 'currencycode' value: self transaction currency;
 	    addParameter: 'method' value: self method.
 	^url

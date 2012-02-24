@@ -1,5 +1,5 @@
 Iliad.ILWidget subclass: Transaction [
-    | currency amount account paymentAction payer sandbox successUrl description |
+    | currency amount subtotal tax shipping account paymentAction payer sandbox successUrl description |
 
     <category: 'PayPal'>
 
@@ -86,6 +86,36 @@ Iliad.ILWidget subclass: Transaction [
     amount: aNumber [
 	<category: 'accessing'>
 	amount := aNumber
+    ]
+
+    shipping [
+	<category: 'accessing'>
+	^shipping ifNil: [0]
+    ]
+
+    shipping: aNumber [
+	<category: 'accessing'>
+	shipping := aNumber
+    ]
+
+    tax [
+	<category: 'accessing'>
+	^tax ifNil: [0]
+    ]
+
+    tax: aNumber [
+	<category: 'accessing'>
+	tax := aNumber
+    ]
+
+    subtotal [
+	<category: 'accessing'>
+	^subtotal ifNil: [self amount - (self tax + self shipping)]
+    ]
+
+    subtotal: aNumber [
+	<category: 'accessing'>
+	subtotal := aNumber
     ]
 
     paymentAction [
