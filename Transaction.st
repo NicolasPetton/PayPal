@@ -70,7 +70,7 @@ Iliad.ILWidget subclass: Transaction [
 
     description [
 	<category: 'accessing'>
-	description ifNil: ['']
+	^description ifNil: ['']
     ]
 
     description: aString [
