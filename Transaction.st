@@ -1,5 +1,5 @@
 Iliad.ILWidget subclass: Transaction [
-    | currency amount account paymentAction payer sandbox successUrl |
+    | currency amount account paymentAction payer sandbox successUrl description |
 
     <category: 'PayPal'>
 
@@ -66,6 +66,16 @@ Iliad.ILWidget subclass: Transaction [
     currency: aString [
 	<category: 'accessing'>
 	currency := aString
+    ]
+
+    description [
+	<category: 'accessing'>
+	description ifNil: ['']
+    ]
+
+    description: aString [
+	<category: 'accessing'>
+	description := aString
     ]
 
     amount [

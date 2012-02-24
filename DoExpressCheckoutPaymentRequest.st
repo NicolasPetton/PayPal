@@ -22,6 +22,7 @@ NVPRequest subclass: DoExpressCheckoutPaymentRequest [
 	^super requestUrl
 	    addParameter: 'payerid' value: self payer id;
 	    addParameter: 'token' value: self token;
+	    addParameter: 'desc' value: self transaction description;
 	    yourself
     ]
 ]
