@@ -41,6 +41,7 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'desc' value: self transaction description;
 	    addParameter: 'currencycode' value: self transaction currency;
 	    addParameter: 'method' value: self method.
+	url asString printNl.
 	^url
     ]
 ]
