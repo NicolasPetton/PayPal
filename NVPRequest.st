@@ -27,6 +27,7 @@ Iliad.ILObject subclass: NVPRequest [
     requestUrl [
 	<category: 'accessing'>
 	| url itemsAmount |
+	itemsAmount := 0.
 	url := Iliad.ILUrl absolute: self transaction baseUrl.
 	url
 	    addParameter: 'user' value: self account user;
