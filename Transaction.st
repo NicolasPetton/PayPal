@@ -187,7 +187,7 @@ Iliad.ILWidget subclass: Transaction [
 
     commandForRequest: aRequest [
 	<category: 'requests'>
-	^'curl "', aRequest requestUrl asString, '"'
+	^'curl "', ((aRequest requestUrl asString) copyReplaceAll: '%20' with: '+') , '"'
     ]
 
     responseForCommand: aString [
