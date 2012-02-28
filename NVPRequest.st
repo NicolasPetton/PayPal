@@ -40,6 +40,10 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'tax' value: self transaction tax;
 	    addParameter: 'currencycode' value: self transaction currency;
 	    addParameter: 'method' value: self method.
+	self transaction paypalItems do: [:each |
+	    url addParameter: ('L_NUMBER', ((self items indexOf: each) - 1) printString).
+	    url addParameter: ('L_QTY', (each quantity printString)).
+	    url addParameter: ('L_AMT', (each amount printString))].
 	url asString printNl.
 	^url
     ]

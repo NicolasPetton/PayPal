@@ -14,14 +14,8 @@ NVPRequest subclass: GetExpressCheckoutDetailsRequest [
 
     requestUrl [
 	<category: 'accessing'>
-	| url |
-	url := (super requestUrl
+	^super requestUrl
 	    addParameter: 'token' value: self token;
-	    yourself).
-	self transaction paypalItems do: [:each |
-	    url addParameter: ('L_NUMBER', ((self items indexOf: each) - 1) printString).
-	    url addParameter: ('L_QTY', (each quantity printString)).
-	    url addParameter: ('L_AMT', (each amount printString))].
-	^url
+	    yourself.
     ]
 ]
