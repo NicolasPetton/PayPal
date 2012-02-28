@@ -1,5 +1,5 @@
 Iliad.ILWidget subclass: Transaction [
-    | currency amount subtotal tax shipping account paymentAction payer sandbox successUrl description |
+    | currency amount subtotal tax shipping account paymentAction payer sandbox successUrl description paypalItems |
 
     <category: 'PayPal'>
 
@@ -34,6 +34,21 @@ Iliad.ILWidget subclass: Transaction [
     defaultPaymentAction [
 	<category: 'defaults'>
 	^'Sale'
+    ]
+
+    paypalItems [
+	<category: 'accessing'>
+	^paypalItems ifNil: [paypalItems := OrderedCollection new]
+    ]
+
+    paypalItems: aCollection [
+	<category: 'accessing'>
+	paypalItems := aCollection
+    ]
+
+    addPayPalItem: aPayPalItem [
+	<category: 'accessing'>
+	self paypalItems add: aPayPalItem
     ]
 
     beSandbox [

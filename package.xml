@@ -4,6 +4,7 @@
   <prereq>Iliad</prereq>
   <prereq>NetClients</prereq>
   <filein>Account.st</filein>
+  <filein>PayPalItem.st</filein>
   <filein>Address.st</filein>
   <filein>Payer.st</filein>
   <filein>NVPRequest.st</filein>
@@ -15,6 +16,7 @@
   <filein>ExpressCheckoutTransaction.st</filein>
   <file>Account.st</file>
   <file>Address.st</file>
+  <file>PayPalItem.st</file>
   <file>Payer.st</file>
   <file>NVPRequest.st</file>
   <file>NVPResponse.st</file>
