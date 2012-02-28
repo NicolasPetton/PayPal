@@ -1,5 +1,5 @@
 Object subclass: PayPalItem [
-    | amount quantity name |
+    | amount taxAmount quantity name |
 
     <category: 'PayPal'> 
 
@@ -16,6 +16,16 @@ Object subclass: PayPalItem [
     amount [
 	<category: 'accessing'>
 	^amount ifNil: [amount := 0]
+    ]
+
+    taxAmount [
+	<category: 'accessing'>
+	^taxAmount ifNil: [taxAmount := 0]
+    ]
+
+    taxAmount: aNumber [
+	<category: 'accessing'>
+	taxAmount := aNumber
     ]
 
     amount: aNumber [
