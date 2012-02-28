@@ -6,7 +6,7 @@ Transaction subclass: ExpressCheckoutTransaction [
 
     defaultVersion [
 	<category: 'defaults'>
-	^'56.0'
+	^'58.0'
     ]
 
     token [
