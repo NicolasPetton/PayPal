@@ -195,13 +195,13 @@ Iliad.ILWidget subclass: Transaction [
 
     cleanUrl: aString [
 	<category: 'converting'>
-	^aString
-	    copyReplaceAll: '%20' with: '+';
-	    copyReplaceAll: '%28' with: '(';
-	    copyReplaceAll: '%29' with: ')';
-	    copyReplaceAll: '%3A' with: ':';
-	    copyReplaceAll: '%2F' with: '/';
-	    yourself
+	| res |
+	res := aString copyReplaceAll: '%20' with: '+'.
+	res := res copyReplaceAll: '%28' with: '('.
+	res := res copyReplaceAll: '%29' with: ')'.
+	res := res copyReplaceAll: '%3A' with: ':'.
+	res := res copyReplaceAll: '%2F' with: '/'.
+	^res
     ]
 
     responseForCommand: aString [
