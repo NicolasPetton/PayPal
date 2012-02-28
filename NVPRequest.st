@@ -45,7 +45,6 @@ Iliad.ILObject subclass: NVPRequest [
 	    url addParameter: ('L_NAME', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each name). 
 	    url addParameter: ('L_QTY', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each quantity printString).
 	    url addParameter: ('L_AMT', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each amount printString)].
-	url asString printNl.
 	^url
     ]
 ]
