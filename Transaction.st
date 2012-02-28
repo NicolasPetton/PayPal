@@ -199,8 +199,6 @@ Iliad.ILWidget subclass: Transaction [
 	res := aString copyReplaceAll: '%20' with: '+'.
 	res := res copyReplaceAll: '%28' with: '('.
 	res := res copyReplaceAll: '%29' with: ')'.
-	res := res copyReplaceAll: '%3A' with: ':'.
-	res := res copyReplaceAll: '%2F' with: '/'.
 	^res
     ]
 
