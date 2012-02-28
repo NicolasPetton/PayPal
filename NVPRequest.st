@@ -53,6 +53,7 @@ Iliad.ILObject subclass: NVPRequest [
 	url 
 	    addParameter: 'ITEMAMT' value: itemsAmount printString;
 	    addParameter: 'TAXAMT' value: taxAmount printString.
+	    addParameter: 'SHIPPINGAMT' value: self transaction shipping.
 	^url
     ]
 ]
