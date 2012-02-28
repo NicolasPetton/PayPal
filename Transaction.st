@@ -189,6 +189,7 @@ Iliad.ILWidget subclass: Transaction [
 	<category: 'requests'>
 	| url |
 	url := aRequest requestUrl asString.
+	(self cleanUrl: url) printNl.
 	^'curl "', (self cleanUrl: url) , '"'
     ]
 
