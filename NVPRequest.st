@@ -26,8 +26,9 @@ Iliad.ILObject subclass: NVPRequest [
 
     requestUrl [
 	<category: 'accessing'>
-	| url itemsAmount |
+	| url itemsAmount taxAmount |
 	itemsAmount := 0.
+	taxAmount := 0.
 	url := Iliad.ILUrl absolute: self transaction baseUrl.
 	url
 	    addParameter: 'user' value: self account user;
@@ -35,7 +36,7 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'signature' value: self account signature;
 	    addParameter: 'version' value: self transaction version;
 	    addParameter: 'paymentaction' value: self transaction paymentAction;
-	    addParameter: 'amt' value: self transaction amount;
+	    addParameter: 'AMT' value: self transaction amount;
 	    addParameter: 'subtotal' value: self transaction subtotal;
 	    addParameter: 'shipping' value: self transaction shipping;
 	    addParameter: 'tax' value: self transaction tax;
@@ -43,6 +44,7 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'method' value: self method.
 	self transaction paypalItems do: [:each |
 	    itemsAmount := itemsAmount + (each quantity * each amount).
+	    taxAmount := taxAmount + (each quantity * each taxAmount).
 	    url addParameter: ('L_NUMBER', ((self transaction paypalItems indexOf: each) - 1) printString) value: (self transaction paypalItems indexOf: each).
 	    url addParameter: ('L_NAME', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each name). 
 	    url addParameter: ('L_AMT', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each amount printString).
@@ -50,9 +52,7 @@ Iliad.ILObject subclass: NVPRequest [
 	    url addParameter: ('L_QTY', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each quantity printString)].
 	url 
 	    addParameter: 'ITEMAMT' value: itemsAmount printString;
-	    addParameter: 'SHIPPINGAMT' value: '0';
-	    addParameter: 'HANDLINGAMT' value: '0';
-	    addParameter: 'TAXAMT' value: '0'.
+	    addParameter: 'TAXAMT' value: taxAmount printString.
 	^url
     ]
 ]
