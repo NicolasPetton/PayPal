@@ -187,8 +187,20 @@ Iliad.ILWidget subclass: Transaction [
 
     commandForRequest: aRequest [
 	<category: 'requests'>
-	((aRequest requestUrl asString) copyReplaceAll: '%20' with: '+') printNl.
-	^'curl "', ((aRequest requestUrl asString) copyReplaceAll: '%20' with: '+') , '"'
+	| url |
+	url := aRequest requestUrl asString.
+	self cleanUrl: url printNl.
+	^'curl "', (self cleanUrl: url) , '"'
+    ]
+
+    cleanUrl: aString [
+	<category: 'converting'>
+	^aString
+	    copyReplaceAll: '%20' with: '+';
+	    copyReplaceAll: '%3A' with: ':';
+	    copyReplaceAll: '%2F' with: '/';
+	    copyReplaceAll: '%28' with: '(';
+	    copyReplaceAll: '%29' with: ')'
     ]
 
     responseForCommand: aString [
