@@ -1,7 +1,17 @@
 Object subclass: PayPalItem [
-    | amount quantity |
+    | amount quantity name |
 
     <category: 'PayPal'> 
+
+    name [
+	<category: 'accessing'>
+	^name ifNil: ['']
+    ]
+
+    name: aString [
+	<category: 'accessing'>
+	name := aString
+    ]
 
     amount [
 	<category: 'accessing'>
