@@ -41,8 +41,8 @@ Iliad.ILObject subclass: NVPRequest [
 	    addParameter: 'currencycode' value: self transaction currency;
 	    addParameter: 'method' value: self method.
 	self transaction paypalItems do: [:each |
-	    url addParameter: ('L_NUMBER', ((self transaction paypalItems indexOf: each) - 1) printString).
-	    url addParameter: ('L_NAME', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each name).
+	    url addParameter: ('L_NUMBER', ((self transaction paypalItems indexOf: each) - 1) printString) value: (self transaction paypalItems indexOf: each).
+	    url addParameter: ('L_NAME', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each name copyReplaceAll: ' ' with: '+').
 	    url addParameter: ('L_QTY', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each quantity printString).
 	    url addParameter: ('L_AMT', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each amount printString)].
 	url asString printNl.
