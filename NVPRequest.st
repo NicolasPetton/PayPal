@@ -52,7 +52,7 @@ Iliad.ILObject subclass: NVPRequest [
 	    url addParameter: ('L_QTY', ((self transaction paypalItems indexOf: each) - 1) printString) value: (each quantity printString)].
 	url 
 	    addParameter: 'ITEMAMT' value: itemsAmount printString;
-	    addParameter: 'TAXAMT' value: taxAmount printString.
+	    addParameter: 'TAXAMT' value: taxAmount printString;
 	    addParameter: 'SHIPPINGAMT' value: self transaction shipping.
 	^url
     ]
